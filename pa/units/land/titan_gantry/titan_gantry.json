@@ -2,25 +2,7 @@
   "base_spec": "/pa/units/land/base_structure/base_structure.json",
   "display_name": "Titan Gantry",
   "description": "Advanced manufacturing- Builds most titans.",
-  "max_health": 30000,
-  "build_metal_cost": 3600,
-  "atrophy_rate": 80,
-  "atrophy_cool_down": 15,
-  "buildable_types": "Mobile & Titan",
-  "rolloff_dirs": [
-    [
-      0,
-      1,
-      0
-    ],
-    [
-      0,
-      -1,
-      0
-    ]
-  ],
-  "wait_to_rolloff_time": 0,
-  "factory_cooldown_time": 4,
+  "build_metal_cost": 15000,
   "unit_types": [
     "UNITTYPE_Factory",
     "UNITTYPE_Construction",
@@ -30,16 +12,7 @@
     "UNITTYPE_Important",
     "UNITTYPE_FabAdvBuild"
   ],
-  "command_caps": [
-    "ORDER_Move",
-    "ORDER_Patrol",
-    "ORDER_FactoryBuild",
-    "ORDER_Reclaim",
-    "ORDER_Repair",
-    "ORDER_Attack",
-    "ORDER_Assist",
-    "ORDER_Use"
-  ],
+  "max_health": 30000,
   "recon": {
     "observer": {
       "items": [
@@ -58,29 +31,37 @@
       ]
     }
   },
-  "model": {
-    "filename": "/pa/units/land/vehicle_factory_adv/vehicle_factory_adv.papa",
-    "animations": {
-      "idle": "/pa/units/land/vehicle_factory_adv/vehicle_factory_adv_anim_build.papa",
-      "build_start": "/pa/units/land/vehicle_factory_adv/vehicle_factory_adv_anim_start.papa",
-      "build_loop": "/pa/units/land/vehicle_factory_adv/vehicle_factory_adv_anim_build.papa",
-      "build_end": "/pa/units/land/vehicle_factory_adv/vehicle_factory_adv_anim_end.papa"
-    },
-    "animtree": "/pa/anim/anim_trees/factory_anim_tree.json",
-    "skirt_decal": "/pa/effects/specs/skirt_02.json"
-  },
+  "spawn_layers": "WL_AnyHorizontalGroundOrWaterSurface",
+  "buildable_types": "Mobile & Titan",
+  "rolloff_dirs": [
+    [
+      1,
+      0,
+      0
+    ],
+    [
+      -1,
+      0,
+      0
+    ]
+  ],
+  "wait_to_rolloff_time": 0,
   "tools": [
     {
       "spec_id": "/pa/units/land/titan_gantry/titan_gantry_tool_build_arm.json",
       "aim_bone": "bone_root"
     }
   ],
-  "events": {
-    "died": {
-      "effect_spec": "/pa/effects/specs/default_building_explosion_large.pfx",
-      "effect_scale": 1
-    }
-  },
+  "command_caps": [
+    "ORDER_Move",
+    "ORDER_Patrol",
+    "ORDER_FactoryBuild",
+    "ORDER_Reclaim",
+    "ORDER_Repair",
+    "ORDER_Attack",
+    "ORDER_Assist",
+    "ORDER_Use"
+  ],
   "audio": {
     "loops": {
       "build": {
@@ -91,125 +72,51 @@
       }
     }
   },
+  "si_name": "metal_storage_adv",
+  "selection_icon": {
+    "diameter": 200,
+    "vertical_offset": 3.5
+  },
+  "TEMP_texelinfo": 51,
+  "events": {
+    "build_complete": {
+      "audio_cue": "/SE/Build_Complete/control_point"
+    },
+    "died": {
+      "audio_cue": "/SE/Death/control_point",
+      "effect_spec": "/pa/effects/specs/default_building_explosion_large.pfx",
+      "effect_scale": 3
+    }
+  },
   "fx_offsets": [
     {
-      "type": "build",
-      "filename": "/pa/effects/specs/fab_spray.pfx",
-      "bone": "socket_nozzle01",
+      "type": "idle",
+      "filename": "/pa/units/land/control_module/control_module_strobe01.pfx",
+      "bone": "bone_rightArm",
       "offset": [
-        0,
-        0,
-        0
-      ],
-      "orientation": [
-        0,
-        0,
-        0
+        0.35,
+        -112.156,
+        2.578
       ]
     },
     {
-      "type": "build",
-      "filename": "/pa/effects/specs/fab_spray.pfx",
-      "bone": "socket_nozzle02",
+      "type": "idle",
+      "filename": "/pa/units/land/control_module/control_module_strobe02.pfx",
+      "bone": "bone_leftArm",
       "offset": [
-        0,
-        0,
-        0
-      ],
-      "orientation": [
-        0,
-        0,
-        0
+        -0.35,
+        -112.156,
+        2.578
       ]
     },
     {
-      "type": "build",
-      "filename": "/pa/effects/specs/fab_spray.pfx",
-      "bone": "socket_nozzle03",
+      "type": "idle",
+      "filename": "/pa/units/land/control_module/control_module_enabled.pfx",
+      "bone": "bone_conductor02",
       "offset": [
         0,
-        0,
-        0
-      ],
-      "orientation": [
-        0,
-        0,
-        0
-      ]
-    },
-    {
-      "type": "build",
-      "filename": "/pa/effects/specs/fab_spray.pfx",
-      "bone": "socket_nozzle04",
-      "offset": [
-        0,
-        0,
-        0
-      ],
-      "orientation": [
-        0,
-        0,
-        0
-      ]
-    },
-    {
-      "type": "build",
-      "filename": "/pa/effects/specs/fab_spray.pfx",
-      "bone": "socket_nozzle05",
-      "offset": [
-        0,
-        0,
-        0
-      ],
-      "orientation": [
-        0,
-        0,
-        0
-      ]
-    },
-    {
-      "type": "build",
-      "filename": "/pa/effects/specs/fab_spray.pfx",
-      "bone": "socket_nozzle06",
-      "offset": [
-        0,
-        0,
-        0
-      ],
-      "orientation": [
-        0,
-        0,
-        0
-      ]
-    },
-    {
-      "type": "build",
-      "filename": "/pa/effects/specs/fab_spray.pfx",
-      "bone": "socket_nozzle07",
-      "offset": [
-        0,
-        0,
-        0
-      ],
-      "orientation": [
-        0,
-        0,
-        0
-      ]
-    },
-    {
-      "type": "build",
-      "filename": "/pa/effects/specs/fab_spray.pfx",
-      "bone": "socket_nozzle08",
-      "offset": [
-        0,
-        0,
-        0
-      ],
-      "orientation": [
-        0,
-        0,
-        0
+        -63,
+        4
       ]
     }
   ],
@@ -217,89 +124,58 @@
     {
       "gobo": "/pa/effects/textures/gobo/spotlight_gobo.papa",
       "offset": [
-        0,
-        0,
-        30
+        5.688,
+        -75.598,
+        12
       ],
       "orientation": [
         0,
-        0,
+        35,
         0
       ],
-      "near_width": 30,
-      "near_height": 30,
-      "near_distance": 15,
-      "far_distance": 30,
+      "near_width": 1,
+      "near_height": 1.2,
+      "near_distance": 0.5,
+      "far_distance": 15,
       "color": [
         1.5,
         1.52,
         1.6
       ],
-      "debug": false
+      "intensity": 5,
+      "bone": "bone_rightArm"
+    },
+    {
+      "gobo": "/pa/effects/textures/gobo/spotlight_gobo.papa",
+      "offset": [
+        -5.688,
+        -75.598,
+        12
+      ],
+      "orientation": [
+        0,
+        35,
+        0
+      ],
+      "near_width": 1,
+      "near_height": 1.2,
+      "near_distance": 0.5,
+      "far_distance": 15,
+      "color": [
+        1.5,
+        1.52,
+        1.6
+      ],
+      "intensity": 5,
+      "bone": "bone_leftArm"
     }
   ],
   "lamps": [
     {
       "offset": [
-        18.671,
-        -17.929,
-        15.64
-      ],
-      "radius": 8,
-      "color": [
-        0.1,
-        1,
-        0.1
-      ],
-      "intensity": 2
-    },
-    {
-      "offset": [
-        22.812,
-        -17.929,
-        11.32
-      ],
-      "radius": 8,
-      "color": [
-        0.1,
-        1,
-        0.1
-      ],
-      "intensity": 2
-    },
-    {
-      "offset": [
-        18.671,
-        17.929,
-        15.64
-      ],
-      "radius": 8,
-      "color": [
-        0.1,
-        1,
-        0.1
-      ],
-      "intensity": 2
-    },
-    {
-      "offset": [
-        22.812,
-        17.929,
-        11.32
-      ],
-      "radius": 8,
-      "color": [
-        0.1,
-        1,
-        0.1
-      ],
-      "intensity": 2
-    },
-    {
-      "offset": [
-        -17.05,
-        25.28,
-        5.68
+        -30.126,
+        -44.99,
+        32
       ],
       "radius": 4,
       "color": [
@@ -311,9 +187,9 @@
     },
     {
       "offset": [
-        -17.05,
-        -25.28,
-        5.68
+        30.126,
+        -44.99,
+        32
       ],
       "radius": 4,
       "color": [
@@ -324,22 +200,24 @@
       "intensity": 2
     }
   ],
-  "selection_icon": {
-    "diameter": 74
-  },
   "mesh_bounds": [
-    50,
-    50,
-    23
-  ],
-  "placement_size": [
-    60,
+    80,
+    150,
     100
   ],
-  "area_build_separation": 2,
-  "TEMP_texelinfo": 62.1789,
-  "physics": {
-    "collision_layers": "WL_AnyHorizontalGroundOrWaterSurface"
+  "model": {
+    "filename": "/pa/units/land/control_module/control_module.papa",
+    "animations": {
+      "start": "/pa/units/land/control_module/control_module_anim_start.papa",
+      "loop": "/pa/units/land/control_module/control_module_anim_loop.papa",
+      "end": "/pa/units/land/control_module/control_module_anim_end.papa"
+    },
+    "animtree": "/pa/anim/anim_trees/powered_loop_anim_tree.json"
   },
-  "si_name": "metal_storage_adv"
+  "placement_size": [
+    100,
+    170,
+    100
+  ],
+  "area_build_separation": 2
 }
