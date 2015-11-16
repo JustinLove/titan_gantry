@@ -1,0 +1,23 @@
+{
+  "author": "wondible",
+  "build": "89755",
+  "category": ["units", "titans"],
+  "context": "server",
+  "date": "2015/11/16",
+  "dependencies": [
+    "com.wondible.pa.hodgepodge",
+    "com.wondible.pa.icon_reloader"
+  ],
+  "description": "Factory that builds most titans.",
+  "display_name": "Titan Gantry",
+  "forum": null,
+  "identifier": "com.wondible.pa.titan_gantry",
+  "scenes": {
+    "global_mod_list": [
+      "coui://ui/mods/titan_gantry/global.js"
+    ]
+  },
+  "signature": "not yet implemented",
+  "version": "0.1.0"
+}
+
