@@ -72,6 +72,10 @@
       }
     }
   },
+  "storage": {
+    "energy": 300000,
+    "metal": 30000
+  },
   "si_name": "metal_storage_adv",
   "selection_icon": {
     "diameter": 200,

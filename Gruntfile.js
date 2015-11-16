@@ -6,6 +6,12 @@ var modPath = '../../server_mods/com.wondible.pa.titan_gantry/'
 var stream = 'stable'
 var media = require('./lib/path').media(stream)
 
+var titan_cost = 30000
+var construction_demand = {
+  metal: 300,
+  energy: 3000,
+}
+
 module.exports = function(grunt) {
   // Project configuration.
   grunt.initConfig({
@@ -82,6 +88,10 @@ module.exports = function(grunt) {
           spec.tools[0].spec_id = '/pa/units/land/titan_gantry/titan_gantry_tool_build_arm.json'
           spec.command_caps = fac.command_caps
           spec.audio = fac.audio
+          spec.storage = {
+            "energy": titan_cost / construction_demand.metal * construction_demand.energy,
+            "metal": titan_cost
+          },
 
           spec.si_name = 'metal_storage_adv'
           spec.selection_icon = cm.selection_icon
@@ -105,8 +115,7 @@ module.exports = function(grunt) {
         cwd: media,
         dest: 'pa/units/land/titan_gantry/titan_gantry_tool_build_arm.json',
         process: function(spec) {
-          spec.construction_demand.energy = 3000
-          spec.construction_demand.metal = 300
+          spec.construction_demand = construction_demand
           return spec
         }
       },
