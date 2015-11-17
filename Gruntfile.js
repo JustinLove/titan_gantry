@@ -7,9 +7,11 @@ var stream = 'stable'
 var media = require('./lib/path').media(stream)
 
 var titan_cost = 30000
+var build_power = 500
+var energy_rate = 20
 var construction_demand = {
-  metal: 300,
-  energy: 3000,
+  metal: build_power,
+  energy: build_power * energy_rate
 }
 
 module.exports = function(grunt) {
