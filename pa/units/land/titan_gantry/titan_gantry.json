@@ -35,13 +35,13 @@
   "buildable_types": "Mobile & Titan",
   "rolloff_dirs": [
     [
-      1,
       0,
+      1,
       0
     ],
     [
-      -1,
       0,
+      -1,
       0
     ]
   ],

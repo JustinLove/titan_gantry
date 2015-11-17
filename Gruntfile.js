@@ -78,10 +78,7 @@ module.exports = function(grunt) {
           spec.spawn_layers= "WL_AnyHorizontalGroundOrWaterSurface"
 
           spec.buildable_types = "Mobile & Titan"
-          spec.rolloff_dirs = [
-            [ 1, 0, 0 ],
-            [ -1, 0, 0 ]
-          ]
+          spec.rolloff_dirs = fac.rolloff_dirs
           spec.factory_cool_down_time = fac.factory_cool_down_time
           spec.wait_to_rolloff_time = fac.wait_to_rolloff_time
           spec.tools = fac.tools

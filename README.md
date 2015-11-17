@@ -2,6 +2,8 @@
 
 Factory that builds most titans.
 
+Balance is a bit of a shot in the dark; it should be better than a bunch of fabs in some circumstances, but not too good.
+
 Until the support mods improve, this mod is using `icon_si_metal_storage_adv.png` and build bar ["factory", 1]
 
 ## Development
