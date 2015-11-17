@@ -2,6 +2,8 @@
 
 Factory that builds most titans.
 
+Until the support mods improve, this mod is using `icon_si_metal_storage_adv.png` and build bar ["factory", 1]
+
 ## Development
 
 The generated project includes a `package.json` that lists the dependencies, but you'll need to run `npm install` to download them.
