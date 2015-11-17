@@ -11,6 +11,7 @@
   "description": "Factory that builds most titans.",
   "display_name": "Titan Gantry",
   "forum": null,
+  "icon": "http://wondible.com/pa/icons/titan_gantry.png",
   "identifier": "com.wondible.pa.titan_gantry",
   "scenes": {
     "global_mod_list": [
