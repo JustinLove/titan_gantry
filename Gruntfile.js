@@ -92,7 +92,6 @@ module.exports = function(grunt) {
             "metal": titan_cost
           },
 
-          spec.si_name = 'metal_storage_adv'
           spec.selection_icon = cm.selection_icon
           spec.TEMP_texelinfo = cm.TEMP_texelinfo
           spec.events = cm.events

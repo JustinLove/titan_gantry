@@ -3,7 +3,7 @@
   "build": "89755",
   "category": ["units", "titans"],
   "context": "server",
-  "date": "2015/11/17",
+  "date": "2015/11/20",
   "dependencies": [
     "com.wondible.pa.hodgepodge",
     "com.wondible.pa.icon_reloader"
@@ -19,6 +19,6 @@
     ]
   },
   "signature": "not yet implemented",
-  "version": "0.1.0"
+  "version": "0.2.0"
 }
 

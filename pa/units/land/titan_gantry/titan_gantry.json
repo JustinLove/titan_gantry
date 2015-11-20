@@ -76,7 +76,6 @@
     "energy": 600000,
     "metal": 30000
   },
-  "si_name": "metal_storage_adv",
   "selection_icon": {
     "diameter": 200,
     "vertical_offset": 3.5
