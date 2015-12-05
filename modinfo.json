@@ -3,7 +3,7 @@
   "build": "89755",
   "category": ["units", "titans"],
   "context": "server",
-  "date": "2015/11/20",
+  "date": "2015/12/05",
   "dependencies": [
     "com.wondible.pa.hodgepodge",
     "com.wondible.pa.icon_reloader"
@@ -11,7 +11,7 @@
   "description": "Factory that builds most titans.",
   "display_name": "Titan Gantry",
   "forum": "https://forums.uberent.com/threads/rel-server-titan-gantry.70945/",
-  "icon": "http://wondible.com/pa/icons/titan_gantry.png",
+  "icon": "http://wondible.com/pa/icons/titan_gantry_i2.png",
   "identifier": "com.wondible.pa.titan_gantry",
   "scenes": {
     "global_mod_list": [
@@ -19,6 +19,6 @@
     ]
   },
   "signature": "not yet implemented",
-  "version": "0.2.0"
+  "version": "0.3.0"
 }
 
