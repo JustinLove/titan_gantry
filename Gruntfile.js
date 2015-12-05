@@ -60,48 +60,57 @@ module.exports = function(grunt) {
       titan_gantry: {
         src: [
           'pa_ex1/units/land/vehicle_factory_adv/vehicle_factory_adv.json',
-          'pa/units/land/control_module/control_module.json',
         ],
         cwd: media,
         dest: 'pa/units/land/titan_gantry/titan_gantry.json',
-        process: function(fac, cm) {
-          spec = {}
-
-          spec.base_spec = fac.base_spec
+        process: function(spec) {
           spec.display_name = 'Titan Gantry'
           spec.description = 'Advanced manufacturing- Builds most titans.'
           spec.build_metal_cost = 15000
-          spec.unit_types = fac.unit_types.filter(function(type) {
+          spec.unit_types = spec.unit_types.filter(function(type) {
             return type != 'UNITTYPE_Tank'
           })
           spec.unit_types.push('UNITTYPE_FabAdvBuild')
-          spec.max_health = fac.max_health
-          spec.recon = fac.recon
           spec.spawn_layers= "WL_AnyHorizontalGroundOrWaterSurface"
 
           spec.buildable_types = "Mobile & Titan"
-          spec.rolloff_dirs = fac.rolloff_dirs
-          spec.factory_cool_down_time = fac.factory_cool_down_time
-          spec.wait_to_rolloff_time = fac.wait_to_rolloff_time
-          spec.tools = fac.tools
           spec.tools[0].spec_id = '/pa/units/land/titan_gantry/titan_gantry_tool_build_arm.json'
-          spec.command_caps = fac.command_caps
-          spec.audio = fac.audio
           spec.storage = {
             "energy": titan_cost / construction_demand.metal * construction_demand.energy,
             "metal": titan_cost
-          },
+          }
 
-          spec.selection_icon = cm.selection_icon
-          spec.TEMP_texelinfo = cm.TEMP_texelinfo
-          spec.events = cm.events
-          spec.fx_offsets = cm.fx_offsets
-          spec.headlights = cm.headlights
-          spec.lamps = cm.lamps
-          spec.mesh_bounds = cm.mesh_bounds
-          spec.model = cm.model
-          spec.placement_size = cm.placement_size
-          spec.area_build_separation = fac.area_build_separation
+          var scale = 2.5
+          spec.model = {
+            "filename": "/pa/units/land/titan_gantry/titan_gantry.papa",
+            "animations": {
+              "idle": "/pa/units/land/titan_gantry/titan_gantry_anim_build.papa",
+              "build_start": "/pa/units/land/titan_gantry/titan_gantry_anim_start.papa",
+              "build_loop": "/pa/units/land/titan_gantry/titan_gantry_anim_build.papa",
+              "build_end": "/pa/units/land/titan_gantry/titan_gantry_anim_end.papa"
+            },
+            "animtree": "/pa/anim/anim_trees/factory_anim_tree.json",
+            "skirt_decal": "/pa/units/land/titan_gantry/skirt_02.json"
+          }
+          spec.events.died.effect_scale = spec.events.died.effect_scale * scale
+          spec.selection_icon.diameter = spec.selection_icon.diameter * scale
+          var stretch = function(array) {
+            for (var i in array) {array[i] = array[i] * scale}
+          }
+          stretch(spec.mesh_bounds)
+          stretch(spec.placement_size)
+          spec.area_build_separation = spec.area_build_separation * scale
+          spec.TEMP_texelinfo = spec.TEMP_texelinfo * scale
+          spec.lamps.forEach(function(lamp) {
+            stretch(lamp.offset)
+            lamp.radius = lamp.radius * scale
+          })
+          var hl = spec.headlights
+          stretch(hl.offset)
+          hl.near_width = hl.near_width * scale
+          hl.near_height = hl.near_height * scale
+          hl.near_distance = hl.near_distance * scale
+          hl.far_distance = hl.far_distance * scale
 
           return spec
         }
