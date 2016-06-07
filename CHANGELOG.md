@@ -1,5 +1,9 @@
 # Titan Gantry
 
+## 0.4.0
+
+- Remove Icon Reloader dependency.
+
 ## 0.3.0
 
 - Replace model with upscaled vehicle factory.
