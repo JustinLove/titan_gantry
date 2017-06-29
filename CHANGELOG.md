@@ -1,5 +1,9 @@
 # Titan Gantry
 
+## 0.5.0
+
+- Update unit list for new commanders circa 105067
+
 ## 0.4.0
 
 - Remove Icon Reloader dependency.
