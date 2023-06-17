@@ -1,5 +1,9 @@
 # Titan Gantry
 
+## 0.6.0
+
+- Update for Custom58 and unit list from 116982
+
 ## 0.5.0
 
 - Update unit list for new commanders circa 105067

@@ -65,6 +65,7 @@ module.exports = function(grunt) {
         dest: 'pa/units/land/titan_gantry/titan_gantry.json',
         process: function(spec) {
           spec.display_name = 'Titan Gantry'
+          spec.unit_name = 'Titan Gantry'
           spec.description = 'Advanced manufacturing- Builds most titans.'
           spec.build_metal_cost = 15000
           spec.unit_types = spec.unit_types.filter(function(type) {
@@ -73,7 +74,7 @@ module.exports = function(grunt) {
           spec.unit_types.push('UNITTYPE_FabAdvBuild')
           spec.spawn_layers= "WL_AnyHorizontalGroundOrWaterSurface"
 
-          spec.buildable_types = "Mobile & Titan"
+          spec.buildable_types = "Mobile & Titan & Custom58"
           spec.tools[0].spec_id = '/pa/units/land/titan_gantry/titan_gantry_tool_build_arm.json'
           spec.storage = {
             "energy": titan_cost / construction_demand.metal * construction_demand.energy,
@@ -143,8 +144,12 @@ module.exports = function(grunt) {
     }
   })
 
+  grunt.registerTask('printPath', function() {
+    console.log(media)
+  });
+
   // Default task(s).
-  grunt.registerTask('default', ['proc', 'copy:static', 'copy:mod']);
+  grunt.registerTask('default', ['proc', 'copy:static', 'copy:mod', 'printPath']);
 
 };
 

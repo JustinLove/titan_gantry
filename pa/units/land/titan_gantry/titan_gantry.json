@@ -1,12 +1,13 @@
 {
   "base_spec": "/pa/units/land/base_structure/base_structure.json",
+  "unit_name": "Titan Gantry",
   "display_name": "Titan Gantry",
   "description": "Advanced manufacturing- Builds most titans.",
   "max_health": 30000,
   "build_metal_cost": 15000,
   "atrophy_rate": 80,
   "atrophy_cool_down": 15,
-  "buildable_types": "Mobile & Titan",
+  "buildable_types": "Mobile & Titan & Custom58",
   "rolloff_dirs": [
     [
       0,
@@ -22,6 +23,7 @@
   "wait_to_rolloff_time": 0,
   "factory_cooldown_time": 4,
   "unit_types": [
+    "UNITTYPE_Custom58",
     "UNITTYPE_Factory",
     "UNITTYPE_Construction",
     "UNITTYPE_Land",
